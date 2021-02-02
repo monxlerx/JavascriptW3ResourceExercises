@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function getMeTheNumber() {
+            const number = prompt("Enter the number");
+            let value = 0;
+            if (number > 13) {
+                value = (Math.abs(number - 13) * 2);
+            } else {
+                value = (Math.abs(number - 13));
+            }
+            alert("The number is " + value);
+        }
+        getMeTheNumber();
+    </script>
+
+</head>
+<body>
+</body>
+</html>

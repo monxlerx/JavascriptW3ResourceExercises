@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const checkNearestNumber100 = (numA, numB) => {
+            let differenceNumA = Math.abs(100 - numA);
+            let differenceNumB = Math.abs(100 - numB);
+
+            if (differenceNumA < differenceNumB) {
+                return numA;
+            } else if (differenceNumB < differenceNumA) {
+                return numB;
+            }
+        }
+        console.log(checkNearestNumber100(142, 78));
+        console.log(checkNearestNumber100(123, 102));
+        console.log(checkNearestNumber100(89, 101));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

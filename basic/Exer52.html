@@ -6,15 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        const sum = (num1, num2) => {
-            if (num1 + num2 > 50 && num1 + num2 < 80) {
-                return 65;
-            } else {
-                return 80
-            }
+        function alphabet_soup(str) {
+            return str.split("").sort().join("");
         }
-        console.log(sum(40, 20));
-        console.log(sum(40, 5));
+        console.log(alphabet_soup("Python"));
+        console.log(alphabet_soup("Exercises"));
     </script>
 </head>
 <body>

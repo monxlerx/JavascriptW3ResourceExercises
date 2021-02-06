@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const concatenateTwoStrings = (str1, str2) => {
+            return extractFirstChar(str1) + extractFirstChar(str2);
+        }
+
+        const extractFirstChar = (str) => {
+            return str.substring(1, str.length);
+        }
+
+        console.log(concatenateTwoStrings("Hello", "car"));
+        console.log(concatenateTwoStrings("Pepsi", "Cola"));
+        console.log(concatenateTwoStrings("PHP", "JS"));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

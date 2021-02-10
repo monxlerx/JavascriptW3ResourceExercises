@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function is_permutation(input_arr, n) {
+        for (let i = 0; i < n; i++) {
+          if (!input_arr.includes(i + 1)) return false;
+        }
+        return true;
+      }
+      console.log(is_permutation([1, 2, 3, 4, 5], 5));
+      console.log(is_permutation([1, 2, 3, 5], 5));
+    </script>
+  </head>
+  <body></body>
+</html>

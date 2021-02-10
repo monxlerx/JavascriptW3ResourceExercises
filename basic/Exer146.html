@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function sumCubes (number) {
+            let counter = 0;
+            let sum = 0;
+            while (counter <= number) {
+                sum += Math.pow(counter, 3);
+                counter++;
+            }
+            return sum;
+        }
+        console.log(sumCubes(2));
+        console.log(sumCubes(4));
+        console.log(sumCubes(5));
+        console.log(sumCubes(3));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

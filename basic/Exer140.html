@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function checkAllDigitsAreEqual (number) {
+            const first = number % 10;
+            while (number) {
+                if (number % 10 !== first) return false;
+                number = Math.floor(number / 10);
+            }
+            return true;
+        }
+        console.log(checkAllDigitsAreEqual(3421));
+        console.log(checkAllDigitsAreEqual(222));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

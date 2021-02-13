@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script>
-      const byte_Size = (str) => new Blob([str]).size;
-      console.log(byte_Size("123456"));
+      const xProd = (a, b) =>
+        a.reduce((acc, x) => acc.concat(b.map((y) => [x, y])), []);
+      console.log(xProd([1, 2], ["a", "b"]));
     </script>
   </head>
   <body></body>

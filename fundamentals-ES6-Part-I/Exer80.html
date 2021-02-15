@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const luhnCheck = (num) => {
+        let arr = (num + "")
+          .split("")
+          .reverse()
+          .map((x) => parseInt(x));
+        let lastDigit = arr.splice(0, 1)[0];
+        let sum = arr.reduce(
+          (acc, val, i) =>
+            i % 2 !== 0 ? acc + val : acc + ((val * 2) % 9) || 9,
+          0
+        );
+        sum += lastDigit;
+        return sum % 10 === 0;
+      };
+      console.log(luhnCheck("4485275742308327"));
+      console.log(luhnCheck(6011329933655299));
+      console.log(luhnCheck(123456789));
+    </script>
+  </head>
+  <body></body>
+</html>

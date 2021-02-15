@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const compose = (...fns) =>
+        fns.reduce((f, g) => (...args) => f(g(...args)));
+
+      const add5 = (x) => x + 5;
+
+      const multiply = (x, y) => x * y;
+
+      const multiplyAndAdd5 = compose(add5, multiply);
+
+      console.log(multiplyAndAdd5(5, 2));
+    </script>
+  </head>
+  <body></body>
+</html>

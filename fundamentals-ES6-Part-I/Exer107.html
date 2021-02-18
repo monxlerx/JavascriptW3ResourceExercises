@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const uniqueElementsByRight = (arr, fn) =>
+        arr.reduceRight((acc, v) => {
+          if (!acc.some((x) => fn(v, x))) acc.push(v);
+          return acc;
+        }, []);
+
+      console.log(
+        uniqueElementsByRight(
+          [
+            { id: 0, value: "a" },
+            { id: 1, value: "b" },
+            { id: 2, value: "c" },
+            { id: 1, value: "d" },
+            { id: 0, value: "e" },
+          ],
+          (a, b) => a.id == b.id
+        )
+      );
+    </script>
+  </head>
+  <body></body>
+</html>

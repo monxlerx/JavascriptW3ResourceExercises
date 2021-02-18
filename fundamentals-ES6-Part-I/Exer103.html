@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const words = (str, pattern = /[^a-zA-Z-]+/) =>
+        str.split(pattern).filter(Boolean);
+      console.log(words("I love javaScript!!"));
+      console.log(words("python, java, php"));
+    </script>
+  </head>
+  <body></body>
+</html>

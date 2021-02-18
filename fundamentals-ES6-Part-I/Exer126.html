@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const toCurrency = (n, curr, LanguageFormat = undefined) =>
+        Intl.NumberFormat(LanguageFormat, {
+          style: "currency",
+          currency: curr,
+        }).format(n);
+
+      console.log(toCurrency(123456.789, "EUR")); // currency: Euro | currencyLangFormat: Local
+      console.log(toCurrency(123456.789, "USD", "en-us")); // currency: US Dollar | currencyLangFormat: English (United States)
+      console.log(toCurrency(123456.789, "USD", "fa")); //currency: US Dollar | currencyLangFormat: Farsi
+      console.log(toCurrency(322342436423.2435, "JPY")); //currency: Japanese Yen | currencyLangFormat: Local
+      console.log(toCurrency(322342436423.2435, "JPY", "fi"));
+    </script>
+  </head>
+  <body></body>
+</html>

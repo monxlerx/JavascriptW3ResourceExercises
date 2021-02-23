@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const minBy = (arr, fn) =>
+        Math.min(...arr.map(typeof fn === "function" ? fn : (val) => val[fn]));
+      console.log(minBy([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], (o) => o.n));
+      console.log(minBy([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], "n"));
+    </script>
+  </head>
+  <body></body>
+</html>

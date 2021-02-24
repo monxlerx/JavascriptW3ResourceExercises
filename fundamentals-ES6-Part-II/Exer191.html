@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script>
-      const reject = (pred, array) => array.filter((args) => !pred(args));
+      const isPlainObject = (val) =>
+        !!val && typeof val === "object" && val.constructor === Object;
 
-      console.log(reject((x) => x % 2 === 0, [1, 2, 3, 4, 5]));
-      console.log(reject((word) => word.length > 4, ["Apple", "Pear", "Kiwi", "Banana"]));
-      
+      console.log(isPlainObject({ a: 1 }));
+      console.log(isPlainObject(new Map()));
     </script>
   </head>
   <body></body>

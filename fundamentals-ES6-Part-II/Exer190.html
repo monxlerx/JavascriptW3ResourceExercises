@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const isPrimitive = (val) =>
+        !["object", "function"].includes(typeof val) || val === null;
+
+      console.log(isPrimitive(null));
+      console.log(isPrimitive(50));
+      console.log(isPrimitive("Hello!"));
+      console.log(isPrimitive(false));
+      console.log(isPrimitive(Symbol()));
+      console.log(isPrimitive([]));
+    </script>
+  </head>
+  <body></body>
+</html>

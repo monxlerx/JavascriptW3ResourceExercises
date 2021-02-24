@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const isArrayLike = (val) => {
+        try {
+          return [...val], true;
+        } catch (e) {
+          return false;
+        }
+      };
+      console.log(isArrayLike(document.querySelectorAll(".className"))); // true
+      console.log(isArrayLike("abc")); // true
+      console.log(isArrayLike(null));
+    </script>
+  </head>
+  <body></body>
+</html>

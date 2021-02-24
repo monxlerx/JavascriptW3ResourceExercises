@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script>
-      const reject = (pred, array) => array.filter((args) => !pred(args));
+      const isEven = (num) => num % 2 === 0;
 
-      console.log(reject((x) => x % 2 === 0, [1, 2, 3, 4, 5]));
-      console.log(reject((word) => word.length > 4, ["Apple", "Pear", "Kiwi", "Banana"]));
-      
+      console.log(isEven(3));
+      console.log(isEven(32));
+      console.log(isEven(1));
     </script>
   </head>
   <body></body>

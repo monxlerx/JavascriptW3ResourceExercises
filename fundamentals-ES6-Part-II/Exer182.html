@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const join = (arr, separator = ",", end = separator) =>
+        arr.reduce(
+          (acc, val, i) =>
+            i === arr.length - 2
+              ? acc + val + end
+              : i === arr.length - 1
+              ? acc + val
+              : acc + val + separator,
+          ""
+        );
+      console.log(join(["pen", "pineapple", "apple", "pen"], ",", "&"));
+      console.log(join(["pen", "pineapple", "apple", "pen"], ","));
+      console.log(join(["pen", "pineapple", "apple", "pen"]));
+    </script>
+  </head>
+  <body></body>
+</html>

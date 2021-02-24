@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const is = (type, val) =>
+        ![, null].includes(val) && val.constructor === type;
+      console.log(is(Array, [1])); // true
+      console.log(is(ArrayBuffer, new ArrayBuffer()));
+      console.log(is(Map, new Map()));
+      console.log(is(RegExp, /./g));
+      console.log(is(Set, new Set()));
+      console.log(is(WeakMap, new WeakMap()));
+      console.log(is(WeakSet, new WeakSet()));
+      console.log(is(String, ""));
+      console.log(is(String, new String("")));
+      console.log(is(Number, 1));
+      console.log(is(Number, new Number(1)));
+      console.log(is(Boolean, true));
+      console.log(is(Boolean, new Boolean(true)));
+    </script>
+  </head>
+  <body></body>
+</html>

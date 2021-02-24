@@ -6,11 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script>
-      const reject = (pred, array) => array.filter((args) => !pred(args));
-
-      console.log(reject((x) => x % 2 === 0, [1, 2, 3, 4, 5]));
-      console.log(reject((word) => word.length > 4, ["Apple", "Pear", "Kiwi", "Banana"]));
-      
+      const intersectionWith = (a, b, comp) =>
+        a.filter((x) => b.findIndex((y) => comp(x, y)) !== -1);
+      console.log(
+        intersectionWith(
+          [1, 1.2, 1.5, 3, 0],
+          [1.9, 3, 0, 3.9],
+          (a, b) => Math.round(a) === Math.round(b)
+        )
+      );
     </script>
   </head>
   <body></body>

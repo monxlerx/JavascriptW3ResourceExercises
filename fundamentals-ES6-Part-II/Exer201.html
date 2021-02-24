@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script>
-      const reject = (pred, array) => array.filter((args) => !pred(args));
+      const isDivisible = (dividend, divisor) => dividend % divisor === 0;
 
-      console.log(reject((x) => x % 2 === 0, [1, 2, 3, 4, 5]));
-      console.log(reject((word) => word.length > 4, ["Apple", "Pear", "Kiwi", "Banana"]));
-      
+      console.log(isDivisible(6, 3));
+      console.log(isDivisible(5, 3));
+      console.log(isDivisible(100, 10));
+      console.log(isDivisible(0, 3));
     </script>
   </head>
   <body></body>

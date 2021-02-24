@@ -6,11 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script>
-      const reject = (pred, array) => array.filter((args) => !pred(args));
-
-      console.log(reject((x) => x % 2 === 0, [1, 2, 3, 4, 5]));
-      console.log(reject((word) => word.length > 4, ["Apple", "Pear", "Kiwi", "Banana"]));
-      
+      const isObject = (obj) => obj === Object(obj);
+      console.log(isObject([1, 2, 3, 4]));
+      console.log(isObject([]));
+      console.log(isObject(["Hello!"]));
+      console.log(isObject({ a: 1 }));
+      console.log(isObject({}));
+      console.log(isObject(true));
     </script>
   </head>
   <body></body>

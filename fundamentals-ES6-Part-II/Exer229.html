@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const fromCamelCase = (str, separator = "_") =>
+        str
+          .replace(/([a-z\d])([A-Z])/g, "$1" + separator + "$2")
+          .replace(/([A-Z]+)([A-Z][a-z\d]+)/g, "$1" + separator + "$2")
+          .toLowerCase();
+
+      console.log(fromCamelCase("someDatabaseFieldName", " "));
+      console.log(fromCamelCase("someLabelThatNeedsToBeCamelized", "-"));
+      console.log(fromCamelCase("someJavascriptProperty", "_"));
+    </script>
+  </head>
+  <body></body>
+</html>

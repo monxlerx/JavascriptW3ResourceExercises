@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const remove = (arr, func) =>
+        Array.isArray(arr)
+          ? arr.filter(func).reduce((acc, val) => {
+              arr.splice(arr.indexOf(val), 1);
+              return acc.concat(val);
+            }, [])
+          : [];
+
+      console.log(remove([1, 2, 3, 4], (n) => n % 2 === 0));
+    </script>
+  </head>
+  <body></body>
+</html>

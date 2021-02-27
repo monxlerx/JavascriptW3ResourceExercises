@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        const reverseNumber = (num) => {
-            const numbersArray  = Array.from(num);
-            return numbersArray.reverse().join("");
-        } 
-        console.log(reverseNumber("19346"));
+        const computeValue = () => {
+            const base = parseInt(prompt("Enter a base"));
+            const exponent = parseInt(prompt("Enter a exponent"));
+            return Math.pow(base, exponent);
+        }
+        console.log(computeValue());
     </script>
 </head>
 <body>

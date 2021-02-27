@@ -6,11 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        const reverseNumber = (num) => {
-            const numbersArray  = Array.from(num);
-            return numbersArray.reverse().join("");
-        } 
-        console.log(reverseNumber("19346"));
+        const alphabetOrder = (str) => str.split('').sort().join('');
+        console.log(alphabetOrder("Reduced"));
     </script>
 </head>
 <body>

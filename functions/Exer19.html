@@ -6,11 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        const reverseNumber = (num) => {
-            const numbersArray  = Array.from(num);
-            return numbersArray.reverse().join("");
-        } 
-        console.log(reverseNumber("19346"));
+        const checkElementsLarger = (numbers, num) => numbers.map((x) => {
+            if (x > num) return x;
+        });
+        console.log(checkElementsLarger([33, 55, 6, 3, 42], 7));
     </script>
 </head>
 <body>

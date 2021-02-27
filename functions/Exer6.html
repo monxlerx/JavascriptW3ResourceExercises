@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const findLargestWord = (str) => {
+            const words = str.split(" ");
+            let largestWord = " ";
+            let counterLength = 0;
+            for (let i = 0; i < words.length; i++) {
+                if (words[i].length > counterLength) {
+                    largestWord = words[i];
+                    counterLength = words[i].length;
+                }
+            }
+            return largestWord;
+        }
+        console.log(findLargestWord("Web Development Tutorial"))
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

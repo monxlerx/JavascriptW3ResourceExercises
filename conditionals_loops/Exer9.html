@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const checkArmstrongNumber = (number) => {
+            let numbers = Array.from(number);
+            let accumulator = 0;
+            let sum = 0;
+            for (let i = 0; i < numbers.length; i++) {
+                sum += Math.pow(parseInt(numbers[i]), cube = 3);
+            } 
+            return (sum === parseInt(number)) ? `Result: ${sum} It is an Armstrong number` 
+            : `Result: ${sum} No, it is not an Armstrong number`
+        }
+        console.log(checkArmstrongNumber("322"));   
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

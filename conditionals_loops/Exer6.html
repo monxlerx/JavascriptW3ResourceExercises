@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const averageMarks = (marks) => {
+            let sum = marks.reduce((accumulator, currentMark) => accumulator += currentMark);
+            let average = sum / marks.length;
+            let grade;
+            if (average < 60) {
+                grade = "F";
+            } else if (average < 70) {
+                grade =  "D";
+            } else if (average < 80) {
+                grade =  "C";
+            } else if (average < 90) {
+                grade = "B"
+            } else {
+                grade = "A";
+            } 
+            console.log(`Average grade : ${average}`);
+            console.log(`Grade : ${grade}`);
+        }
+        console.log(averageMarks([80, 77, 88, 95, 68]));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

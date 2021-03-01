@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const isInteger = (num) => Number(num) === num && num % 1 === 0;
+      console.log(isInteger(23));
+      console.log(isInteger(4e2));
+      console.log(isInteger(NaN));
+      console.log(isInteger(23.75));
+      console.log(isInteger(-23));
+    </script>
+  </head>
+  <body></body>
+</html>

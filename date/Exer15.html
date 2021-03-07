@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const getQuarterYear = (date) => {
+        if (date.getMonth() >= 0 && date.getMonth() <= 2) return 1;
+        if (date.getMonth() >= 3 && date.getMonth() <= 5) return 2;
+        if (date.getMonth() >= 6 && date.getMonth() <= 8) return 3;
+        if (date.getMonth() >= 9 && date.getMonth() <= 11) return 4;
+      };
+      console.log(getQuarterYear(new Date(2015, 1, 21)));
+      console.log(getQuarterYear(new Date(2015, 6, 05)));
+      console.log(getQuarterYear(new Date(2015, 10, 18)));
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const getVolumeSphere = () => {
+            const radius = document.getElementById('radius').value;
+            const volumeSphere = ((4 / 3) * (Math.PI * Math.pow(radius, 3))).toFixed(2);
+            document.getElementById('volume').value = volumeSphere;
+        }
+    </script>
+</head>
+<body>
+    <p>Input radius and get the volume of a sphere</p>
+    <form>
+        <label for="radius">Radius</label>
+        <input type="number" id="radius" name="radius">
+        <label for="volume">Volume</label>
+        <input type="number" name="volume" id="volume">
+        <button onclick="getVolumeSphere()">Calculate</button>
+    </form>
+</body>
+</html>
+<!--V = 4/3 πr³. -->

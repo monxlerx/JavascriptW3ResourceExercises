@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const textTruncate = (str, length, ending) => {
+        if (length == null) length = 100;
+        if (ending == null) ending = "...";
+        if (str.length > length) {
+          return str.substring(0, length - ending.length) + ending;
+        } else {
+          return str;
+        }
+      };
+      console.log(text_truncate("We are doing JS string exercises."));
+      console.log(text_truncate("We are doing JS string exercises.", 19));
+      console.log(text_truncate("We are doing JS string exercises.", 15, "!!"));
+    </script>
+  </head>
+  <body></body>
+</html>

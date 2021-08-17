@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function createStairs(num) {
+            let stairs = "";
+            for (let level = 1; level <= num; level++) {
+                let steps = "";
+                for (let step = 1; step <= level; step++) {
+                    steps += "[-]";
+                }
+                stairs += steps + '\n';
+            }
+            return stairs;
+        }
+
+       let numberOfSteps = prompt("Introduce steps");
+       console.log(createStairs(numberOfSteps));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

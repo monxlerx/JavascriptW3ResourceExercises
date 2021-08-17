@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        let array = [1,2,3,4,5];
+        let num1 = 5;
+        console.log("The array is permuted: " + permutation(array, num1));
+
+        let array2 = [1,3,4,5,66,88];
+        let num2 = 3;
+        console.log("The array is permuted: " + permutation(array2, num2)); 
+
+        function permutation(arrayOfNumbers, number) {
+            let isPermuted = false; 
+            for (let i = 1; i < number; i++) {
+                if (arrayOfNumbers[i - 1] === i) {
+                    isPermuted = true;
+                } else {
+                    isPermuted = false;
+                }
+            }
+            return isPermuted;
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

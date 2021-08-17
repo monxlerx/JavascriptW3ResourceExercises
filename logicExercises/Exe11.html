@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function censureWords(phrase, word) {
+            if (phrase === "" || word === ""){
+                return "We cannot do the search";
+            }
+
+            let phraseArray = phrase.split(" ");
+            for (let i=0; i<phraseArray.length; i++){
+                if (phraseArray[i] === word) {
+                    phraseArray[i] = "[CENSORED]";
+                }
+            }
+
+            return phraseArray.join(" ");
+        }
+
+        let phrase = prompt("Introduce a phrase");
+        let word = prompt("Introduce a word");
+        console.log(censureWords(phrase, word));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

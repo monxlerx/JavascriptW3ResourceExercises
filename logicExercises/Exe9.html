@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function getCommonElements(array1, array2) {
+            let commonNumbers = [];
+            console.log(array1);
+            console.log(array2);
+            for (let i=0; i<array1.length; i++) {
+                for (let j=0; j<array2.length; j++) {
+                    if (array1[i] === array2[j]) {
+                        commonNumbers.push(array1[i]);
+                    }
+                }
+            }
+
+            return commonNumbers;
+        }
+
+        function loadArray () {
+            let numbers = [];
+            let num = prompt("Give a number!! Introduce -1 to exit");
+
+            while (num != 99) {
+                num = prompt("Give a number!! Introduce -1 to exit");
+                if (num != 99) numbers.push(num);
+            }
+
+            alert("You ´ve got your array fully loaded");
+            return numbers;
+        }
+
+        let array1 = loadArray();
+        let array2 = loadArray();
+        console.log("Common elements in the two arrays " + getCommonElements(array1, array2));
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

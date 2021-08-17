@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function inverseOrderCharacters(phase) {
+            let charArray = phase.split('');
+            let inverseCharArray = [];
+
+            for (let i = charArray.length; i >= 0; i--) {
+                let charToAdd = charArray[i];
+                inverseCharArray.push(charToAdd);
+            }
+            return inverseCharArray.join('');
+        }
+
+        let originalPhase = prompt ("Introduce a phrase");
+        console.log(originalPhase);
+        console.log(inverseOrderCharacters(originalPhase)); 
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

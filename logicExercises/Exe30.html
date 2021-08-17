@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        console.log(addOnlyNumbers([1, 2, 1, 1, 1, 3, 4]));
+        console.log(addOnlyNumbers(["Ken", "Peter", 8, 8, 8, 10, 11]));
+
+        function addOnlyNumbers(array) {
+            let arrayOnlyNumbers = new Set();
+            array.forEach(element => {
+                if (typeof element === 'number') {
+                    arrayOnlyNumbers.add(element)
+                }
+            });
+
+            return arrayOnlyNumbers;
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

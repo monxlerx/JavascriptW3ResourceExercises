@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function isPalindrome (word) {
+            let originalWord = Array.from(word);
+            let reverseWord = word.split('').reverse();
+            let isPalindrome = true; 
+
+            for (let i=0; i<originalWord.length; i++) {
+                if (originalWord[i] != reverseWord[i]) {
+                    isPalindrome = false;
+                    break;
+                }
+            }
+            return isPalindrome;
+        }
+        let word = prompt("Introduce a word to check if it is a palindrome");
+        console.log(word + " " + isPalindrome(word));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

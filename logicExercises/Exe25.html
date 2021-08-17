@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let word = prompt("Introduce a word");
+        console.log(writeUpperCaseOrLowerCase(word));
+
+        function writeUpperCaseOrLowerCase(word) {
+            let counterUpperCase = 0;
+            let counterLowerCase = 0;
+            let wordTransformation = word;
+
+            for (let i = 0; i < word.length; i++) {
+                if (/[A-Z]/.test(word.charAt(i))) {
+                    counterUpperCase++;
+                } else {
+                    counterLowerCase++;
+                }
+            }
+
+            if (counterUpperCase > counterLowerCase) {
+                wordTransformation = word.toUpperCase();
+            } else if (counterLowerCase > counterUpperCase) {
+                wordTransformation = word.toLowerCase();
+            } else {
+                wordTransformation = "Equal lowercase and uppercase letter in the word";
+            }
+
+            return wordTransformation;
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function getAmountOddNumbers(lowerNumber, higherNumber) {
+            let amountOddNumbers = 0;
+            for (let i = ++lowerNumber; i < higherNumber; i++) {
+                if (i % 2 !== 0) amountOddNumbers++;
+            }
+
+            return amountOddNumbers;
+        }
+
+        let lowerNumber = prompt("Introduce the lower number");
+        let higherNumber = prompt("Introduce the higher number");
+        console.log("Odd numbers " + getAmountOddNumbers(lowerNumber, higherNumber));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

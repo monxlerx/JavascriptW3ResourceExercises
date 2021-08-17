@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function findCoincidence (phrase, word) {
+            let numberCoincidences = 0;
+            let stringArray = phrase.split(/(\s+)/);
+
+            for (let i=0; i<stringArray.length; i++) {
+                if (stringArray[i] === word) numberCoincidence++;
+            }
+
+            return numberCoincidences;
+        }
+        let phrase = prompt("Introduce a phrase");
+        let word  = prompt("Introduce a word you can find in the phrase");
+
+        console.log("The number of coincidence are " + findCoincidence(phrase, word));
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

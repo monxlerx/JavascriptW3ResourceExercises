@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        let days = parseInt(prompt("Introduce number of days"));
+        console.log(calculateTime(days));
+
+        function calculateTime(numberOfDays) {
+            const DAYS_TO_YEAR = 365;
+            const DAYS_TO_MONTH = 30;
+            let counterYears = 0;
+            let counterMonths = 0;
+            let counterDays = 0;
+            let numberOfDaysLeft = numberOfDays;
+
+            while(numberOfDaysLeft != 0) {
+                if (Math.floor(numberOfDaysLeft / DAYS_TO_YEAR) > 0) {
+                    counterYears = Math.floor(numberOfDaysLeft / DAYS_TO_YEAR);
+                    numberOfDaysLeft -= DAYS_TO_YEAR * counterYears;
+                } else if (Math.floor(numberOfDaysLeft / DAYS_TO_MONTH) > 0) {
+                    counterMonths = Math.floor(numberOfDaysLeft / DAYS_TO_MONTH);
+                    numberOfDaysLeft -= DAYS_TO_MONTH * counterMonths;
+                } else { 
+                    counterDays = numberOfDaysLeft;
+                    numberOfDaysLeft -= counterDays;
+                }
+            }
+            return `${counterYears} years + ${counterMonths} months + ${counterDays} days`;
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

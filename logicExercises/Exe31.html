@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        let grades = parseInt(prompt("Introduce an angle"));
+        console.log(typeOfAngle(grades));
+
+        function typeOfAngle(grades) {
+            let angleType = "";
+            if (grades > 0 && grades < 90) {
+                angleType = "Acute angle";
+            } else if (grades === 90) {
+                angleType = "Right angle";
+            } else if (grades > 90 && grades < 180) {
+                angleType = "Obtuse angle";
+            } else if (grades === 180) {
+                angleType = "Straight angle";
+            } else{
+                angleType = "No define angle"
+            }
+
+            return angleType;
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

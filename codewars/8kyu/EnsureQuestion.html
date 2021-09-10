@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        Given a string, write a function that returns the string with a question mark ("?") appends to the end, unless the original string ends with a question mark, in which case, returns the original string.
+
+        For example (Input --> Output)
+
+        "Yes" --> "Yes?" 
+        "No?" --> "No?"
+        */
+
+        console.log(ensureQuestion(""));
+        console.log(ensureQuestion("Yes"));
+        console.log(ensureQuestion("No?"));
+
+        function ensureQuestion(s) {
+            let str;
+            let controlChar;
+
+            if (s.trim().length === 0) {
+                str = "?"
+            } else {
+                 controlChar = s.slice(s.length - 1, s.length);
+                if (controlChar.includes("?")) {
+                    str = s;
+                } else {
+                    str = s + "?";
+                }
+            }
+
+            return str;
+        }
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

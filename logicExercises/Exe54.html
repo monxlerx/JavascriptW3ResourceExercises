@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let numbers = getOddAndEvenNumbers([1, 2, 3, 4, 55, 65, 77, 34, 234]);
+        console.log("List of odd numbers " + numbers[0]);
+        console.log("List of even numbers " + numbers[1]);
+
+        function getOddAndEvenNumbers(arrayOfNumbers) {
+            let oddNumbers = [];
+            let evenNumbers = [];
+
+            arrayOfNumbers.forEach(element => {
+                if (element % 2 === 0) {
+                    evenNumbers.push(element);
+                } else {
+                    oddNumbers.push(element);
+                }
+            });
+
+            return [oddNumbers, evenNumbers];
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

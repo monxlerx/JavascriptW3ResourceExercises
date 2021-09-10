@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let word = prompt("Introduce a word");
+        console.log(countVowelsAndConsonants(word));
+
+        function countVowelsAndConsonants(word) {
+            let wordToArray = word.toLowerCase().split('');
+            let counterVowels = 0;
+            let counterConsonants = 0;
+
+            wordToArray.forEach(element => {
+                if (/[bcdfghjklmnpqrstvwxys]/gi.test(element)) {
+                    counterConsonants++;
+                } else {
+                    counterVowels++;
+                }
+            });
+
+            return `The number of vowels is ${counterConsonants} and the consonants is ${counterVowels}`;
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

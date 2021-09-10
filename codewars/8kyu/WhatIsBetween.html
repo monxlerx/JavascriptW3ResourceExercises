@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+       /*
+       Complete the function that takes two integers (a, b, where a < b) and return an array of all integers between the input parameters, including them.
+
+        For example:
+
+        a = 1
+        b = 4
+        --> [1, 2, 3, 4]
+       */ 
+        console.log(between(3, 9));
+
+      function between(a, b) {
+          let result = [];
+
+          if (a < b) {
+              for (let i = a; i <= b; i++) {
+                  result.push(i);
+              }
+          } else {
+              return result;
+          }
+
+          return result;
+      }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

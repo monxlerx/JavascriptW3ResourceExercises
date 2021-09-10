@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        console.log(lowerHigherNumbers([23, 40, 2, 5, 6]));
+        console.log(lowerHigherNumbers([2000, 33, 223, 523, 44]));
+
+        function lowerHigherNumbers(arrayNumbers) {
+            let sortedNumbers = arrayNumbers.sort((a, b) => a - b);
+            let lowerNumber = sortedNumbers[0];
+            let higherNumber = sortedNumbers[arrayNumbers.length - 1];
+            
+            return `The min value is ${lowerNumber} and the max value is ${higherNumber}`;
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        Move the first letter of each word to the end of it, then add "ay" to the end of the word. Leave punctuation marks untouched.
+
+        Examples
+        pigIt('Pig latin is cool'); // igPay atinlay siay oolcay
+        pigIt('Hello world !');     // elloHay orldway !
+        */
+
+        //console.log(pigIt("Pig latin is cool"));
+        //console.log(pigIt("This is my string"));
+        console.log(pigIt("Hello world !"));
+        console.log(pigIt('O tempora o mores !'));
+
+        function pigIt(str) {
+            let strArray = str.split(' ');
+            const AY_PART = "ay";
+            let phraseArray = [];
+
+            for (let i = 0; i < strArray.length; i++) {
+                if (strArray[i].charAt(0).match(/^[.,:!?]/)) {
+                    phraseArray.push(strArray[i]);
+                } else {
+                    let firstLetter = strArray[i].slice(0, 1);
+                    let restWord = strArray[i].slice(1, strArray[i].length)
+                    let compoundWord = restWord + firstLetter + AY_PART;
+                    phraseArray.push(compoundWord);
+                }
+            }
+
+            return phraseArray.join(' ');
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

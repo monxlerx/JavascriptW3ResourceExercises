@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        #Find the missing letter
+        Write a method that takes an array of consecutive (increasing) letters as input and that returns the missing letter in the array.
+
+        You will always get an valid array. And it will be always exactly one letter be missing. The length of the array will always be at least 2.
+        The array will always contain letters in only one case.
+
+        Example:
+
+        ['a','b','c','d','f'] -> 'e' ['O','Q','R','S'] -> 'P'
+
+        ["a","b","c","d","f"] -> "e"
+        ["O","Q","R","S"] -> "P"
+        (Use the English alphabet with 26 letters!)
+        */
+
+        console.log(findMissingLetter(["a","b","c","d","f"]));
+        console.log(findMissingLetter(["O","Q","R","S"]));
+
+        function findMissingLetter(array) {
+            let charCodes = [];
+            let charCodesFound;
+
+            array.forEach(element => {
+                let charCode = element.charCodeAt(0);
+                charCodes.push(charCode);
+            });
+
+            for (let i = 0; i < charCodes.length; i++) {
+                if (Math.abs(charCodes[i] - charCodes[i + 1]) != 1) {
+                    charCodeGapFound = charCodes[(i + 1)];
+                    break;
+                }
+            }
+
+            return String.fromCharCode(charCodeGapFound - 1);
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

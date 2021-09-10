@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      /*
+        Write simple .camelCase method (camel_case function in PHP, CamelCase in C# or camelCase in Java) for strings. All words must have their first letter capitalized without spaces.
+        For instance:
+        "hello case".camelCase() => HelloCase
+        "camel case word".camelCase() => CamelCaseWord
+        */
+
+      console.log(camelCase("hello world"));
+      console.log(camelCase("say hello "));
+      console.log(camelCase(""));
+      console.log(camelCase(" camel case word"));
+
+      String.prototype.camelCase = function () {
+        return this.split(" ")
+          .map((w) => w.slice(0, 1).toUpperCase() + w.slice(1))
+          .join("");
+      };
+    </script>
+  </head>
+  <body></body>
+</html>

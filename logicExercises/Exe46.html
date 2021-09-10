@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        console.log(giveTwoWords(["hello", "San Francisco", "Los Angeles", "Vicky"]));
+        console.log(giveTwoWords(["Bye", "Peter Alfred William", "Vicky"]));
+
+        function giveTwoWords(array) {
+            let twoWords = [];
+            let aux = [];
+
+            array.forEach(element => {
+                aux = element.split(' ');
+                if (aux.length > 1) {
+                    twoWords.push(element);
+                }
+            });
+            
+            return twoWords;
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

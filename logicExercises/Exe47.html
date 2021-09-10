@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let students = [
+            {
+                name: "Student 1",
+                score: 7.6
+            },
+            {
+                name: "Student 2",
+                score: 8.9
+            },
+            {
+                name: "Student 3",
+                score: 5
+            },
+            {
+                name: "Student 4",
+                score: 2
+            }
+        ]
+
+        console.log(getScores(students));
+
+        function getScores(students) {
+            let counterStudentPass = 0;
+            let counterStudentFail = 0;
+
+            students.forEach(element => {
+                if (element.score >= 5) {
+                    counterStudentPass++;
+                } else{
+                    counterStudentFail++;
+                }
+            });
+
+            return `Number of students has passed the exam: ${counterStudentPass} | Number of students has failed the exam: ${counterStudentFail}`;
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

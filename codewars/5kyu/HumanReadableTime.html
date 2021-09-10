@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        console.log(humanReadable(5));
+        console.log(humanReadable(60));
+        console.log(humanReadable(86399));
+
+        function humanReadable(seconds) {
+            var pad = function (x) {
+                return (x < 10) ? "0" + x : x;
+            }
+            return pad(parseInt(seconds / (60 * 60))) + ":" +
+                pad(parseInt(seconds / 60 % 60)) + ":" +
+                pad(seconds % 60)
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

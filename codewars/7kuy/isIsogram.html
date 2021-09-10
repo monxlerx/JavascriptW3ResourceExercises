@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        An isogram is a word that has no repeating letters, consecutive or non-consecutive. Implement a function that determines whether a string that contains only letters is an isogram. Assume the empty string is an isogram. Ignore letter case.        
+        */
+
+        let letter = "Dermqdatoglyphics";
+        console.log(isIsogram(letter));
+
+        function isIsogram(str) {
+            let stringToArray = str.toLowerCase().split('');
+            let charASCIICodes = [];
+            let comparatorASCIICode = 0;
+            let ASCIICodeSet = new Set();  
+
+            stringToArray.forEach(element => {
+                let letterCode = element.charCodeAt(0);
+                charASCIICodes.push(letterCode);
+            });
+
+            charASCIICodes.forEach(element => {
+                ASCIICodeSet.add(element);
+            });
+
+            if (charASCIICodes.length !== ASCIICodeSet.size) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        const hobbies = [
+            {
+                name: "name1",
+                hobby: "programming" 
+            },
+            {
+                name: "name2",
+                hobby: "music"
+            }, 
+            {
+                name: "name3",
+                hobby: "dance"
+            }, 
+            {
+                name: "name4",
+                hobby: "programming"
+            },
+            {
+                name: "name5",
+                hobby: "programming"
+            },
+            {
+                name: "name6",
+                hobby: "sports"
+            },
+            {
+                name: "name7",
+                hobby: "sports"
+            }
+        ]
+
+        console.log(getHobbiesStats(hobbies));
+
+        function getHobbiesStats(hobbies) {
+            let mappingHobbies = new Map();
+            
+            hobbies.forEach(element => {
+                if (mappingHobbies.has(element.hobby)) {
+                    let currentValue = mappingHobbies.get(element.hobby);
+                    mappingHobbies.set(element.hobby, currentValue + 1);
+                } else {
+                    mappingHobbies.set(element.hobby, 1);
+                }
+            });
+
+            return mappingHobbies;
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -19,23 +19,12 @@
         */
 
         function countPositivesSumNegatives(input) {
-            let counterPositiveNumbers = 0;
-            let sumNegativeNumbers = 0;
-
-            if (input.length === 0) {
-                return [0, 0];
-            } else {
-                input.forEach(element => {
-                    if (element > 0) {
-                        counterPositiveNumbers++;
-                    } else {
-                        sumNegativeNumbers += element
-                    }
-                });
-
-                return [counterPositiveNumbers, sumNegativeNumbers];
-            }
-
+            if (!Array.isArray(input) || !input.length) return [];
+            return input.reduce((arr, n) => {
+                if (n > 0) arr[0]++;
+                if (n < 0) arr[1] += n;
+                return arr;
+            }, [0, 0]);
         }
     </script>
 </head>

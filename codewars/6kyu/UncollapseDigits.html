@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      /*
+        You will be given a string of English digits "stuck" together, like this:
+
+        "zeronineoneoneeighttwoseventhreesixfourtwofive"
+
+        Your task is to split the string into separate digits:
+
+        "zero nine one one eight two seven three six four two five"
+
+        Examples
+        "three"              -->  "three"
+        "eightsix"           -->  "eight six"
+        "fivefourseven"      -->  "five four seven"
+        "ninethreesixthree"  -->  "nine three six three"
+        "fivethreefivesixthreenineonesevenoneeight"  -->  "five three five six three nine one seven one eight"
+        */
+
+      console.log(uncollapse("ninethreesixthree"));
+
+      function uncollapse(digits) {
+        let result = [];
+
+        const regexList = [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+          "six",
+          "seven",
+          "eight",
+          "nine",
+          "zero",
+        ];
+
+        for (var i = 0; i < regexList.length; i++) {
+            if (digits.match(regexList[i])) {
+                result.push(regexList[i]);
+            }
+        }
+
+        return result.reverse().join(' ');
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

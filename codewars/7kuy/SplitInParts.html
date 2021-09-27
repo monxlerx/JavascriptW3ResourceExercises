@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        The aim of this kata is to split a given string into different strings of equal size (note size of strings is passed to the method)
+
+        Example:
+
+        Split the below string into other strings of size #3
+
+        'supercalifragilisticexpialidocious'
+
+        Will return a new string
+        'sup erc ali fra gil ist ice xpi ali doc iou s'
+        Assumptions:
+
+        String length is always greater than 0
+        String has no spaces
+        Size is always positive
+        */
+
+        console.log(splitInParts("HelloKata", 3));
+
+        function splitInParts(s, partLength) {
+            let result = "";
+            let stringArr = [];
+
+            if (s.length > 0) {
+                for (let i = 0; i < s.length; i += partLength) {
+                    stringArr.push(s.substring(i, i + partLength));
+                }
+                result = stringArr.join(' ');
+            } else {
+                result =  "String length must be always greater than 0";
+            }
+
+            return result;
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

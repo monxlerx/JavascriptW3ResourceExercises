@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        Implement a function that receives two integers m and n and generates a sorted list of pairs (a, b) such that m <= a <= b <= n.
+
+        Example:
+
+        m = 2
+        n = 4
+
+        result = [(2, 2), (2, 3), (2, 4), (3, 3), (3, 4), (4, 4)]
+        */
+        console.log(generatePairs(2,4));
+
+        function generatePairs(m, n) {
+            let arr = [];
+
+            for (let i = m; i <= n; i++) {
+                for (let j = i; j <= n; j++) {
+                    arr.push([i, j]);
+                }
+            }
+
+            return arr;
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

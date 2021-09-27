@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        console.log(encryptThis("A wise old owl lived in an oak"));
+
+        function encryptThis(text) {
+            let strArr = text.split(' ');
+            let resultArr = [];
+
+            for (let i = 0; i < strArr.length; i++) {
+                if (strArr[i].length === 1) {
+                    resultArr.push(strArr[i].charCodeAt(0));
+                } else if (strArr[i].length === 2) {
+                    resultArr.push(strArr[i].charCodeAt(0) + strArr[i].slice((0,1)));
+                } else {
+                    let auxArr = strArr[i].split('');
+                    let word = "";
+
+                    for (let j = 0; j < auxArr.length; j++) {
+                        if (j === 0) {
+                            word += auxArr[j].charCodeAt(0);
+                        } else if (j === 1) {
+                            word += auxArr[auxArr.length - 1];
+                        } else if (j === auxArr.length - 1) {
+                            word += auxArr[1];
+                        } else {
+                            word += auxArr[j];
+                        }
+                    }
+
+                    resultArr.push(word);
+                }
+            }
+
+            return resultArr.join(' ');
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

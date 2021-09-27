@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        Your task is to remove all duplicate words from a string, leaving only single (first) words entries.
+
+        Example:
+
+        Input:
+
+        'alpha beta beta gamma gamma gamma delta alpha beta beta gamma gamma gamma delta'
+
+        Output:
+
+        'alpha beta gamma delta'
+        */
+
+        console.log(removeDuplicateWords("alpha beta beta gamma gamma gamma delta alpha beta beta gamma gamma gamma delta"));
+
+        function removeDuplicateWords(s) {
+            let arr = s.split(' ');
+            let firstEntries = [];
+
+            arr.forEach(element => {
+                if (!firstEntries.includes(element)) {
+                    firstEntries.push(element);
+                }
+            });
+
+            return firstEntries.join(' ');
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

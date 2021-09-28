@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script>
-      /*
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <script>
+    /*
         You will be given a string of English digits "stuck" together, like this:
 
         "zeronineoneoneeighttwoseventhreesixfourtwofive"
@@ -23,33 +24,18 @@
         "fivethreefivesixthreenineonesevenoneeight"  -->  "five three five six three nine one seven one eight"
         */
 
-      console.log(uncollapse("ninethreesixthree"));
+    console.log(uncollapse("fivefourseven"));
 
-      function uncollapse(digits) {
-        let result = [];
-
-        const regexList = [
-          "one",
-          "two",
-          "three",
-          "four",
-          "five",
-          "six",
-          "seven",
-          "eight",
-          "nine",
-          "zero",
-        ];
-
-        for (var i = 0; i < regexList.length; i++) {
-            if (digits.match(regexList[i])) {
-                result.push(regexList[i]);
-            }
-        }
-
-        return result.reverse().join(' ');
+    function uncollapse(digits) {
+      const numbers = "one,two,three,four,five,six,seven,eight,nine,zero".split(",");
+      for (let num of numbers) {
+        digits = digits.split(num).join(" " + num);
       }
-    </script>
-  </head>
-  <body></body>
+      return digits.substring(1);
+    }
+  </script>
+</head>
+
+<body></body>
+
 </html>

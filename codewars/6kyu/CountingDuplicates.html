@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        console.log(duplicateCount("aA1112"));
+
+        function duplicateCount(text) {
+            let strArr = text.split('');
+            let mappingLetters = new Map();
+
+            if (text.length === 0) {
+                return 0;
+            } else {
+                for (let i = 0; i < strArr.length; i++) {
+                    let letter = strArr[i].toLowerCase();
+
+                    if (mappingLetters.has(letter)) {
+                        let counter = mappingLetters.get(letter);
+                        mappingLetters.set(letter, counter + 1);
+                    } else {
+                        mappingLetters.set(letter, 0);
+                    }
+                }
+
+                let duplicates = 0;
+
+                mappingLetters.forEach(function (value, key) {
+                    if (value >= 1) duplicates++;
+                })
+
+                return duplicates;
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        A comfortable word is a word which you can type always alternating the hand you type with (assuming you type using a QWERTY keyboard and use fingers as shown in the image below).
+
+        That being said, complete the function which receives a word and returns true if it's a comfortable word and false otherwise.
+
+        The word will always be a string consisting of only ascii letters from a to z.
+
+
+
+        To avoid problems with image availability, here's the lists of letters for each hand:
+
+        Left: q, w, e, r, t, a, s, d, f, g, z, x, c, v, b
+        Right: y, u, i, o, p, h, j, k, l, n, m
+        */
+
+        console.log(comfortable_word("test"));
+
+        function comfortable_word(word) {
+            const leftHand = ['q', 'w', 'e', 'r', 't', 'a', 's', 'd', 'f', 'g', 'z', 'x', 'c', 'v', 'b'];
+            const rightHand = ['y', 'u', 'i', 'o', 'p', 'h', 'j', 'k', 'l', 'n', 'm'];
+            const wordArr = word.split('');
+            let typingData = [];
+            let isComfortableWord = true;
+
+            for (let i = 0; i < wordArr.length; i++) {
+                if (typingData.length === 0) {
+                    if (leftHand.includes(wordArr[i])) {
+                        let positionCharacter = i;
+                        let handUsed = 'LEFT';
+                        typingData.push([handUsed, positionCharacter]);
+                    } else {
+                        let positionCharacter = i;
+                        let handUsed = 'RIGHT';
+                        typingData.push([handUsed, positionCharacter]);
+                    }
+                } else {
+                    if (leftHand.includes(wordArr[i])) {
+                        if (!typingData[i - 1][0].valueOf('RIGHT')) {
+                            isComfortableWord = false;
+                            break;
+                        } else {
+                            let positionCharacter = i;
+                            let handUsed = 'LEFT';
+                            typingData.push([handUsed, positionCharacter]);
+                        }
+                    } else {
+                        if (!typingData[i -1][0].valueOf('LEFT')) {
+                            isComfortableWord = false;
+                            break;
+                        } else {
+                            let positionCharacter = i;
+                            let handUsed = 'RIGHT';
+                            typingData.push([handUsed, positionCharacter]);
+                        }
+                    }
+                }
+            }
+
+            return isComfortableWord;
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        Description:
+
+        We want to generate a function that computes the series starting from 0 and ending until the given number.
+
+        Example:
+        Input:
+
+        > 6
+        Output:
+
+        0+1+2+3+4+5+6 = 21
+
+        Input:
+
+        > -15
+        Output:
+
+        -15<0
+
+        Input:
+
+        > 0
+        Output:
+
+        0=0
+        */
+
+        console.log(count(-12));
+
+        function count(num) {
+            let result = "";
+            let counter = 0;
+
+            if (count === 0) {
+                result = `0=0`;
+            } else if (count < 0) {
+                result = `${count}<0`;
+            } else {
+                for (let i = 0; i <= count; i++) {
+                    if (i === count) {
+                        counter += i;
+                        result += `${i} = ${counter}`;
+                    } else {
+                        counter += i;
+                        result += `${i}+`;
+                    }
+                }
+            }
+
+            return result;
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

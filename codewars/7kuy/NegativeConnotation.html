@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        You will be given a string with sets of characters, (i.e. words), seperated by between one and three spaces (inclusive).
+
+        Looking at the first letter of each word (case insensitive-"A" and "a" should be treated the same), you need to determine whether it falls into the positive/first half of the alphabet ("a"-"m") or the negative/second half ("n"-"z").
+
+        Return True/true if there are more (or equal) positive words than negative words, False/false otherwise.
+
+        "A big brown fox caught a bad rabbit" => True/true
+        "Xylophones can obtain Xenon." => False/false
+        */
+
+        console.log(connotation("Xylophones can obtain Xenon"));
+
+        function connotation(str) {
+            let strArr = str.trim().replace(/\s+/g, ' ').split(' ');
+            let firstPartAbecedary = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm'];
+            let countFirstHalfAlphabet = 0;
+            let countSecondHalfAlphabet = 0;
+            
+            for (let i = 0; i < strArr.length; i++) {
+                let firstChar = strArr[i].substring(0, 1).toLowerCase();
+                if (firstPartAbecedary.includes(firstChar)) {
+                    countFirstHalfAlphabet++;
+                } else {
+                    countSecondHalfAlphabet++;
+                }
+            }
+
+            return countFirstHalfAlphabet >= countSecondHalfAlphabet;
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

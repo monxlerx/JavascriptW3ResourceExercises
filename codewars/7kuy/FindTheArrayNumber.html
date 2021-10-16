@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        You are given an odd-length array of integers, in which all of them are the same, except for one single number.
+
+        Complete the method which accepts such an array, and returns that single different number.
+
+        The input array will always be valid! (odd-length >= 3)
+
+        Examples
+        [1, 1, 2] ==> 2
+        [17, 17, 3, 17, 17, 17, 17] ==> 3
+        */
+
+        console.log(stray([17, 17, 3, 17, 17, 17, 17]));
+
+        function stray(numbers) {
+            let nums = new Map();
+            let num = 0;
+
+            for (let i = 0; i < numbers.length; i++) {
+                if (nums.has(numbers[i])) {
+                    let counter = nums.get(numbers[i]);
+                    nums.set(numbers[i], counter + 1);
+                } else {
+                    nums.set(numbers[i], 1);
+                }
+            }
+
+            nums.forEach((value, key) => {
+                if (value === 1) {
+                    num = key;
+                }
+            })
+
+            return num;
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

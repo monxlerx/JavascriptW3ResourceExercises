@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        Challenge:
+
+        Given a two-dimensional array of integers, return the flattened version of the array with all the integers in the sorted (ascending) order.
+
+        Example:
+
+        Given [[3, 2, 1], [4, 6, 5], [], [9, 7, 8]], your function should return [1, 2, 3, 4, 5, 6, 7, 8, 9].
+        */
+
+        console.log(flattenAndSort([[3, 2, 1], [4, 6, 5], [], [9, 7, 8]]));
+
+        function flattenAndSort(array) {
+            let flattenArr = [];
+
+            for (let i = 0; i < array.length; i++) {
+                flattenArr.push(...array[i]);
+            }
+
+            return flattenArr.sort((a, b) => a - b);
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      /*
+        Return an output string that translates an input string s/$s by replacing each character in s/$s with a number representing the number of times that character occurs in s/$s and separating each number with the character(s) sep/$sep.
+
+        freq_seq("hello world", "-"); // => "1-1-3-3-2-1-1-2-1-3-1"
+        freq_seq("19999999", ":"); // => "1:7:7:7:7:7:7:7"
+        freq_seq("^^^**$", "x"); // => "3x3x3x2x2x1"
+        */
+
+      console.log(freqSeq("19999999", ":"));
+
+      function freqSeq(str, step) {
+        let mapLetters = [];
+        let strArr = str.split("");
+        let counter = 0;
+
+        for (let i = 0; i < str.length; i++) {
+          for (let j = 0; j < str.length; j++) {
+            if (str[i] === str[j]) {
+              counter++;
+            }
+          }
+          mapLetters.push(counter);
+          counter = 0;
+        }
+
+        return mapLetters.join(step);
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

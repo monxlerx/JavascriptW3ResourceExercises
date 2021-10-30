@@ -1,31 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        /*
-        Write a function that adds from two invocations.
+        console.log(swapVowelCase("Noel is great"));
 
-        All inputs will be integers.
-
-        add(3)(4)  // 7
-        add(12)(20) // 32
-        */
-
-        function add(x) {
-            return function (y) {
-                return x + y
-            }
+        function swapVowelCase(str) {
+            return str.replace(/[aeiou]/ig, x => /[AEIOU]/.test(x) ? x.toLowerCase() : x.toUpperCase())
         }
     </script>
 </head>
-
 <body>
-
+    
 </body>
-
 </html>

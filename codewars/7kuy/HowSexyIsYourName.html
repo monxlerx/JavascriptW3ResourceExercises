@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        How sexy is your name? Write a program that calculates how sexy one's name is according to the criteria below.
+
+        There is a preloaded dictionary of letter scores called SCORES(Python & JavaScript) / $SCORES (Ruby). Add up the letters (case-insensitive) in your name to get your sexy score. Ignore other characters.
+
+            SCORES = {'A': 100, 'B': 14, 'C': 9, 'D': 28, 'E': 145, 'F': 12, 'G': 3,
+                    'H': 10, 'I': 200, 'J': 100, 'K': 114, 'L': 100, 'M': 25,
+                    'N': 450, 'O': 80, 'P': 2, 'Q': 12, 'R': 400, 'S': 113, 'T': 405,
+                    'U': 11, 'V': 10, 'W': 10, 'X': 3, 'Y': 210, 'Z': 23}
+        The program must return how sexy one's name is according to the "Sexy score ranking" chart.
+
+            score <= 60:   'NOT TOO SEXY'
+        61 <= score <= 300:  'PRETTY SEXY'
+        301 <= score <= 599:  'VERY SEXY'
+            score >= 600:  'THE ULTIMATE SEXIEST'
+        */
+
+         console.log(sexyName("TFisLFtRqT fQtpB I"));
+
+         function sexyName(name) {
+            const SCORES = {'A': 100, 'B': 14, 'C': 9, 'D': 28, 'E': 145, 'F': 12, 'G': 3,
+              'H': 10, 'I': 200, 'J': 100, 'K': 114, 'L': 100, 'M': 25,
+              'N': 450, 'O': 80, 'P': 2, 'Q': 12, 'R': 400, 'S': 113, 'T': 405,
+              'U': 11, 'V': 10, 'W': 10, 'X': 3, 'Y': 210, 'Z': 23}
+
+            let sexyMeter = 0;
+            let howSexyYourName = '';
+
+            name.toUpperCase().split('').map((letter) => {
+                for (var [key, value] of Object.entries(SCORES)) {
+                    if (letter === key) sexyMeter += value;
+                }
+            })
+
+            if (sexyMeter <= 60) {
+                howSexyYourName = 'NOT TOO SEXY';
+            } else if (sexyMeter >= 61 && sexyMeter <= 300) {
+                howSexyYourName = 'PRETTY SEXY';
+            } else if (sexyMeter >= 301 && sexyMeter <= 599) {
+                howSexyYourName = 'VERY SEXY';
+            } else {
+                howSexyYourName = 'THE ULTIMATE SEXIEST';
+            }
+
+           return howSexyYourName;
+         }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

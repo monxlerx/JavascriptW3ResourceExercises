@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      /*
+        In this kata, you will take the keys and values of an object and swap them around.
+
+        You will be given a dictionary, and then you will want to return a dictionary with the old values as the keys, and list the old keys as values under their original keys.
+
+        For example, given the dictionary: {'Ice': 'Cream', 'Age': '21', 'Light': 'Cream', 'Double': 'Cream'},
+
+        you should return: {'Cream': ['Ice', 'Double', 'Light'], '21': ['Age']}
+
+        Notes:
+        The dictionary given will only contain strings
+        The dictionary given will not be empty
+        You do not have to sort the items in the lists
+        */
+
+      function switchDict(dic) {
+        let keys = [...new Set(Object.keys(dic))];
+        const dic2 = {};
+
+        keys.forEach((i) =>
+          dic2[dic[i]] ? dic2[dic[i]].push(i) : (dic2[dic[i]] = [i])
+        );
+
+        return dic2;
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

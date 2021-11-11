@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        Oh no! Santa's little elves are sick this year. He has to distribute the presents on his own.
+
+        But he has only 24 hours left. Can he do it?
+
+        Your Task:
+        You will get an array as input with time durations as string in the following format: HH:MM:SS. Each duration represents the time taken by Santa to deliver a present. Determine whether he can do it in 24 hours or not. In case the time required to deliver all of the presents is exactly 24 hours, Santa can complete the delivery ;-) .
+        */
+
+        console.log(determineTime(["00:30:00", "02:30:00", "00:35:00"]));
+
+        function determineTime(durations) {
+            let sec = 0;
+            let str = [];
+            for (let i = 0; i < durations.length; i++) {
+                str = durations[i].split(":");
+                sec += +str[0] * 3600 + +str[1] * 60 + +str[2];
+            }
+            return sec / 3600 <= 24 ? true : false;
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

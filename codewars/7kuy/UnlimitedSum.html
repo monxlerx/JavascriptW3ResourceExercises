@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      /*
+        Write a function sum that accepts an unlimited number of integer arguments, and adds all of them together.
+
+        The function should reject any arguments that are not integers, and sum the remaining integers.
+
+        sum(1, 2, 3)   // -> 6
+        sum(1, "2", 3) // -> 4
+        */
+
+      console.log(4, true, 4, "A", 4, "99");
+
+      function sum() {
+        var total = 0;
+        for (var i = 0; i < arguments.length; i++) {
+          if (typeof arguments[i] === "number" && arguments[i] % 1 === 0) {
+            total += arguments[i];
+          }
+        }
+        return total;
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

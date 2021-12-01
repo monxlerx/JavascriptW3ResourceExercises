@@ -49,12 +49,10 @@
       ];
 
       console.log(isSameLanguage(list1));
-      
-      function isSameLanguage(list) {
-        let usedLanguages = [];  
-        list.map((developer) => usedLanguages.push(developer.language));
 
-        return new Set(usedLanguages).size !== 1 ? false : true;
+      function isSameLanguage(list) {
+        let tester = list[0].language;
+        return list.every((dev) => dev.language === tester);
       }
     </script>
   </head>

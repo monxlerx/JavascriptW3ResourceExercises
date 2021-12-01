@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      /*
+        Given an array/list [] of integers , Find the product of the k maximal numbers.
+        */
+
+      console.log(maxProduct([-4, -27, -15, -6, -1], 2));
+
+      function maxProduct(numbers, size) {
+        return numbers
+          .sort((a, b) => b - a)
+          .slice(0, size)
+          .reduce((acc, n) => acc * n);
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

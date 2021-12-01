@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      /*
+            Given a string of words (x), you need to return an array of the words, sorted alphabetically by the final character in each.
+
+            If two words have the same last letter, they returned array should show them in the order they appeared in the given string.
+
+            All inputs will be valid.
+        */
+
+      console.log(last("man i need a taxi up to ubud"));
+
+      function last(x) {
+        return x
+          .split(" ")
+          .sort(
+            (a, b) => a.charCodeAt(a.length - 1) - b.charCodeAt(b.length - 1)
+          );
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

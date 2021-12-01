@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        Write a method that takes one argument as name and then greets that name, capitalized and ends with an exclamation point.
+
+        Example:
+
+        "riley" --> "Hello Riley!"
+        "JACK"  --> "Hello Jack!"
+        */
+
+        console.log(greet("JACK"));
+
+        function greet(name) {
+            let upperFirstLetterName = name.substring(0, 1).toUpperCase();
+            let restLettersName = name.substring(1, name.length).toLowerCase();
+            return `Hello ${upperFirstLetterName + restLettersName}!`;
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

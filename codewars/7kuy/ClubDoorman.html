@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            The Club Doorman will give you a word. To enter the Club you need to provide the right number according to provided the word.
+
+    Every given word has a doubled letter, like 'tt' in lettuce.
+
+    To answer the right number you need to find the doubled letter's position of the given word in the alphabet and multiply this number per 3.
+
+    It will be given only words with one doubled letter.
+        */
+
+        console.log(passTheDoorMan('lettuce'));
+        console.log(passTheDoorMan('hill'));
+        console.log(passTheDoorMan('apple'));
+
+        function passTheDoorMan(word) {
+            const ALPHABET = 'abcdefghijklmnopqrstuvwxyz';
+            let wordArr = [];
+            let charRepeated = '';
+                    
+            for (let i = 0; i < word.length; i++) {
+                if(checkIfLetterIsPresent(word[i], wordArr)) {
+                    charRepeated = word[i];
+                    break;
+                } else {
+                    wordArr.push(word[i]);
+                }
+            }
+
+            return getPositionAlphabet(charRepeated, ALPHABET) * 3;
+        }
+
+        function checkIfLetterIsPresent(word, wordArr) {
+            return (wordArr.includes(word)) ? true : false;
+        }
+
+        function getPositionAlphabet(charRepeated, alphabet) {
+            const alphabetArr = alphabet.split('');
+
+            for (let i = 0; i < alphabetArr.length; i++) {
+                if (alphabetArr[i] === charRepeated) {
+                    return i + 1;
+                }
+            }
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

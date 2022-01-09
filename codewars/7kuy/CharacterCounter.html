@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      /*
+     You are going to be given a word. Your job will be to make sure that each character in that word has the exact same number of occurrences. You will return true if it is valid, or false if it is not.
+
+    For this kata, capitals are considered the same as lowercase letters. Therefore: "A" == "a"
+
+    The input is a string (with no spaces) containing [a-z],[A-Z],[0-9] and common symbols. The length will be 0 < length < 100.
+     */
+
+      console.log(validateWord("abcabc"));
+
+      function validateWord(s) {
+        var freq = {};
+        s.toLowerCase()
+          .split("")
+          .forEach(function (s) {
+            freq[s] ? freq[s]++ : (freq[s] = 1);
+          });
+
+        return new Set(Object.values(freq)).size == 1;
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

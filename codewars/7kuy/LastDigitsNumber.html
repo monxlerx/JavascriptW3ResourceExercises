@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        Your job is to implement a function which returns the last D digits of an integer N as a list.
+
+        Special cases:
+        If D > (the number of digits of N), return all the digits.
+        If D <= 0, return an empty list.
+
+        */
+        console.log(lastDigit(12,4));
+        console.log(lastDigit(0,1));
+        console.log(lastDigit(2870008609,2));
+
+        function lastDigit(n, d){
+            let arrayNumbers = Array.from(String(n), Number);
+
+            if (d > arrayNumbers.length){
+                return arrayNumbers;
+            }
+            
+            if (d <= 0){
+                return [];
+            }
+
+            return arrayNumbers.splice(arrayNumbers.length - d, arrayNumbers.length);
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

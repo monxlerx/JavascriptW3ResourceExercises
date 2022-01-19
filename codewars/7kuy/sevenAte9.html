@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      /*
+        Write a function that removes every lone 9 that is inbetween 7s.
+
+        "79712312" --> "7712312"
+        "79797"    --> "777
+        */
+      console.log(sevenAte9("797"));
+
+      function sevenAte9(str) {
+        return str.replace(/79(?=7)/g, "7");
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

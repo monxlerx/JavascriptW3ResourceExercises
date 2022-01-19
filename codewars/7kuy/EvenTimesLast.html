@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        Given a sequence of integers, return the sum of all the integers that have an even index (odd index in COBOL), multiplied by the integer at the last index.
+
+        Indices in sequence start from 0.
+
+        If the sequence is empty, you should return 0.
+        
+        */
+       console.log(evenLast([2,3,4,5]))
+
+        function evenLast(numbers){
+            let sumEvenNumbers = 0;
+            for (let i = 0; i < numbers.length; i++){
+                if (i % 2 === 0){
+                    sumEvenNumbers += numbers[i];
+                }
+            }
+
+            return Number.isNaN(sumEvenNumbers * numbers[numbers.length - 1]) ? null : sumEvenNumbers * numbers[numbers.length - 1];
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
+ 
+
+
+
+
+
+
+ 

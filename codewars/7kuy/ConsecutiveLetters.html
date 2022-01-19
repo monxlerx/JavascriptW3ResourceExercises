@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        In this Kata, we will check if a string contains consecutive letters as they appear in the English alphabet and if each letter occurs only once.
+
+        Rules are: (1) the letters are adjacent in the English alphabet, and (2) each letter occurs only once.
+
+            For example: 
+            solve("abc") = True, because it contains a,b,c
+            solve("abd") = False, because a, b, d are not consecutive/adjacent in the alphabet, and c is missing.
+            solve("dabc") = True, because it contains a, b, c, d
+            solve("abbc") = False, because b does not occur once.
+            solve("v") = True
+            All inputs will be lowercase letters.
+        */
+
+       console.log(solve('abbc'));
+
+       function solve(s){
+           let charCodes = [];
+           let strS = s.split('');
+
+           strS.map(char => charCodes.push(char.charCodeAt()));
+           charCodes.sort((a,b) => a - b);
+
+           return (new Set(strS).size === strS.length && charCodes[0] + strS.length - 1 === charCodes[strS.length - 1]) ? true : false;
+       }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      /*
+        Assume that you have an infinite number of gift boxes, and that all of them have the capacity of capacity. In how many ways can you distribute the apples satisfying all of the above conditions?
+
+        Input
+        The total number of apples (4 <= apples <= 100)
+        The maximum amount of apples you can put into a single box (4 <= capacity <= 20)
+        The maximum amount of apples you can leave out (0 <= max_left <= 3)
+        Output
+        The number of possible distributions
+        Example
+        apples = 7
+        capacity = 4
+        max_left = 1
+
+        result = 3
+        There are three ways to distribute the apples:
+
+        seven boxes, one apple per box, no apples left out
+        three boxes, two apples per box, one apple left out
+        two boxes, three apples per box, one apple left out
+        */
+
+      const applesDistribution = (apples, boxCapacity, maxResidue) =>
+        Array(boxCapacity)
+          .fill(0)
+          .filter((el, i) => apples % (i + 1) <= maxResidue).length;
+    </script>
+  </head>
+  <body></body>
+</html>

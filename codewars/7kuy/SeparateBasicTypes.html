@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        Given: a sequence of different type of values (number, string, boolean). You should return an object with a separate properties for each of types presented in input. Each property should contain an array of corresponding values.
+
+        keep order of values like in input array
+        if type is not presented in input, no corresponding property are expected
+        So, for this input:
+
+        ['a', 1, 2, false, 'b']
+        expected output is:
+
+        {
+        number: [1, 2],
+        string: ['a', 'b'],
+        boolean: [false]
+        }
+        */
+       console.log(separateTypes([0.11261838106207112,false,0.8896165759829997]));
+
+        function separateTypes(input) {
+            let output = {};
+
+           input.map((i) => {
+                if (typeof i === 'string') {
+                    if (output.string !== null) {
+                        output.string.push(i);
+                    } else {
+                        output['string'] = [];
+                        output.string.push(i);
+                    }
+                } else if (typeof i === 'number') {
+                    if (output.number !== null) {
+                        output.number.push(i);
+                    } else {
+                        output['number'] = [];
+                        output.number.push(i);
+                    }
+                } else {
+                    if (output.number !== null) {
+                        output.number.push(i);
+                    } else {
+                        output['boolean'] = [];
+                        output.boolean.push(i);
+                    }
+                }
+            })
+
+            return output;
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      /*
+        Task
+        Consider integer numbers from 0 to n - 1 written down along the circle in such a way that the distance between any two neighbouring numbers is equal (note that 0 and n - 1 are neighbouring, too).
+
+        Given n and firstNumber/first_number/first-number, find the number which is written in the radially opposite position to firstNumber.
+        */
+
+      function circleOfNumbers(n, firstNumber) {
+        return (firstNumber + n / 2) % n;
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

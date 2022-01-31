@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        Paul is an excellent coder and sits high on the CW leaderboard. He solves kata like a banshee but would also like to lead a normal life, with other activities. But he just can't stop solving all the kata!!
+
+        Given an array (x) you need to calculate the Paul Misery Score. The values are worth the following points:
+
+        kata = 5
+        Petes kata = 10
+        life = 0
+        eating = 1
+        The Misery Score is the total points gained from the array. Once you have the total, return as follows:
+
+        < 40 = 'Super happy!'
+        < 70 >= 40 = 'Happy!'
+        < 100 >= 70 = 'Sad!'
+        > 100 = 'Miserable!'
+        */
+       console.log(paul(['life', 'Petes kata', 'Petes kata', 'Petes kata', 'eating']));
+
+        function paul (x) {
+            let score = 0;
+
+            x.map(word => {
+                if (word === 'kata') {
+                    score += 5;
+                } else if (word === 'Petes kata') {
+                    score += 10;
+                } else if (word === 'life') {
+                    score += 0;
+                } else {
+                    score += 1;
+                }
+            })
+
+            return (score < 40) ? "Super happy!" : (score < 100 && score >= 70) ? "Sad!" : (score < 70 && score >= 40) ? "Happy!" : "Super happy!"
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

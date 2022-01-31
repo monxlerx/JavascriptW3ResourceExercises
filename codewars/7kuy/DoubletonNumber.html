@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        We will call a natural number a "doubleton number" if it contains exactly two distinct digits. For example, 23, 35, 100, 12121 are doubleton numbers, and 123 and 9980 are not.
+
+        For a given natural number n (from 1 to 1 000 000), you need to find the next doubleton number. If n itself is a doubleton, return the next bigger than n.
+
+        Examples:
+        doubleton(120) === 121
+        doubleton(1234) === 1311
+        doubleton(10) === 12
+        */
+
+        console.log(doubleton(10));
+
+        function doubleton(num) {
+            for (let i = num; i < Number.MAX_VALUE; i++) {
+                if (checkDoubletonNumber(i + 1)) {
+                    return i + 1;
+                }
+            }
+        }
+
+        function checkDoubletonNumber(number) {
+            let arrNumber = number.toString().split('');
+            let setNumber = new Set(arrNumber);
+
+            return setNumber.size === 2 ? true : false;
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

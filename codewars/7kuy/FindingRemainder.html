@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        Task
+        Write a method remainder which takes two integer arguments, dividend and divisor, and returns the remainder when dividend is divided by divisor. Do NOT use the modulus operator (%) to calculate the remainder!
+
+        Assumption
+        Dividend will always be greater than or equal to divisor.
+
+        Notes
+        Make sure that the implemented remainder function works exactly the same as the Modulus operator (%).
+        */
+
+        console.log(remainder(27, 5));
+
+        function remainder(D,d) {
+            let result = Math.floor(D / d);
+            return Math.abs((d * result) - D)
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

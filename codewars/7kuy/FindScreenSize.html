@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        Cheesy Cheeseman just got a new monitor! He is happy with it, but he just discovered that his old desktop wallpaper no longer fits. He wants to find a new wallpaper, but does not know which size wallpaper he should be looking for, and alas, he just threw out the new monitor's box. Luckily he remembers the width and the aspect ratio of the monitor from when Bob Mortimer sold it to him. Can you help Cheesy out?
+
+        The Challenge
+        Given an integer width and a string ratio written as WIDTH:HEIGHT, output the screen dimensions as a string written as WIDTHxHEIGHT.
+
+        Note: The calculated height should be represented as an integer. If the height is fractional, truncate it.
+        */
+       console.log(findScreenHeight(1280,"16:9"));
+
+        function findScreenHeight(width, ratio) {
+            let ratioValues = ratio.split(':');
+            let height = (ratioValues[1] / ratioValues[0]) * width; 
+            return `${width}x${height}`;
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

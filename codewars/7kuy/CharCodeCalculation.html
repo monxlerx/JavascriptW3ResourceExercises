@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      /*
+        Given a string, turn each character into its ASCII character code and join them together to create a number - let's call this number total1:
+
+        'ABC' --> 'A' = 65, 'B' = 66, 'C' = 67 --> 656667
+        Then replace any incidence of the number 7 with the number 1, and call this number 'total2':
+
+        total1 = 656667
+                    ^
+        total2 = 656661
+                    ^
+        Then return the difference between the sum of the digits in total1 and total2:
+
+        (6 + 5 + 6 + 6 + 6 + 7)
+        - (6 + 5 + 6 + 6 + 6 + 1)
+        -------------------------
+                            6
+        */
+       
+        console.log(calc('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'));
+
+        function calc(x) {
+            let sumNumbersTotal1 = 0;
+            let sumNumbersTotal2 = 0;
+
+            let total1 = x.split('').map(char => char.charCodeAt(0)).join('');
+            let total2 = total1.split('').map(char => char.replace('7', '1')).join('');
+            total1.split('').map(n => sumNumbersTotal1 += parseInt(n));
+            total2.split('').map(n => sumNumbersTotal2 += parseInt(n));
+
+            return sumNumbersTotal1 - sumNumbersTotal2;
+        }
+    </script>
+  </head>
+  <body></body>
+</html>

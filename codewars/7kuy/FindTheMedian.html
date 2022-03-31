@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      /*
+    Your non-profit company has assigned you the task of calculating some simple statistics on donations. You have an array of integers, representing various amounts of donations your company has been given. In particular, you're interested in the median value for donations.
+
+    The median is the middle number of a sorted list of numbers. If the list is of even length, the 2 middle values are averaged.
+
+    Write a function that takes an array of integers as an argument and returns the median of those integers.
+
+    Notes:
+
+    The sorting step is vital.
+    Input arrays are non-empty.
+    Examples
+    Median of [33,99,100,30,29,50] is 41.5.
+    Median of [3,2,1] is 2.
+    */
+
+      console.log(median([33, 99, 100, 30, 29, 50]));
+      console.log(median([3, 2, 1]));
+
+      function median(array) {
+        let numbers = [];
+        let sortedArray = array.sort((a, b) => a - b);
+
+        if (sortedArray.length % 2 === 0) {
+          numbers = [
+            sortedArray[sortedArray.length / 2],
+            sortedArray[sortedArray.length / 2 - 1],
+          ];
+        } else {
+          numbers = [sortedArray[Math.floor(sortedArray.length / 2)]];
+        }
+
+        return numbers.length > 1 ? (numbers[0] + numbers[1]) / 2 : numbers[0];
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

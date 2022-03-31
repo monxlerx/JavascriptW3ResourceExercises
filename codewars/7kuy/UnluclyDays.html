@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      /*
+        Friday 13th or Black Friday is considered as unlucky day. Calculate how many unlucky days are in the given year.
+
+        Find the number of Friday 13th in the given year.
+
+        Input: Year in Gregorian calendar as integer.
+
+        Output: Number of Black Fridays in the year as an integer.
+
+        Examples:
+
+        unluckyDays(2015) == 3
+        unluckyDays(1986) == 1
+        */
+
+      function unluckyDays(year) {
+        let unlucky = 0;
+        for (var i = 0; i < 12; i++) {
+          if (new Date(year, i, 13).getDay() === 5) {
+            unlucky++;
+          }
+        }
+        return unlucky;
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

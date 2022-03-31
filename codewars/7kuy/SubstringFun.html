@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        Complete the function that takes an array of words.
+
+        You must concatenate the nth letter from each word to construct a new word which should be returned as a string, where n is the position of the word in the list.
+
+        For example:
+
+        ["yoda", "best", "has"]  -->  "yes"
+        ^        ^        ^
+        n=0     n=1     n=2
+        */
+
+        console.log(nthChar(['yoda', 'best', 'has']));
+        
+        function nthChar(words) {
+            let output = '';
+            for (let i = 0; i < words.length; i++) {
+                let word = words[i].split('');
+                for (let j = 0; j < word.length; j++) {
+                    output += word[i];
+                    break;
+                }
+            }
+
+            return output;
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

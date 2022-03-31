@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        Description:
+        Groups of characters decided to make a battle. Help them to figure out which group is more powerful. Create a function that will accept 2 variables and return the one who's stronger.
+
+        Rules:
+        Each character have its own power: A = 1, B = 2, ... Y = 25, Z = 26
+        Only capital characters can and will participate a battle.
+        Only two groups to a fight.
+        Group whose total power (A + B + C + ...) is bigger wins.
+        If the powers are equal, it's a tie.
+        Examples:
+        battle("ONE", "TWO"); // => "TWO"`
+        battle("ONE", "NEO"); // => "Tie!"
+        */
+
+        function battle(x, y) {
+            const alphabet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+            let xSum = 0;
+            let ySum = 0;
+
+            x.split('').map(char => xSum += checkPower(alphabet, char));
+            y.split('').map(char => ySum += checkPower(alphabet, char));
+
+            return (xSum > ySum) ? x : (ySum > xSum) ? y : 'Tie!';
+        }
+
+        function checkPower(alphabet, c) {
+            for (let i = 0; i < alphabet.length; i++) {
+                if (c === alphabet[i]) return i + 1;
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

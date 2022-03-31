@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      /*
+        Having two standards for a keypad layout is inconvenient!
+        Computer keypad's layout:
+        7 8 9  \n
+        4 5 6  \n
+        1 2 3  \n
+        0 \n
+
+        Cell phone keypad's layout:
+        1 2 3\n
+        4 5 6\n
+        7 8 9\n
+        0\n
+
+        Solve the horror of unstandardized keypads by providing a function that converts computer input to a number as if it was typed on a phone.
+
+        Example:
+        "789" -> "123"
+
+        Notes:
+        You get a string with numbers only
+        */
+
+      console.log(computerToPhone("94561"));
+
+      function computerToPhone(numbers) {
+        if (numbers === "") {
+          return numbers;
+        } else {
+          let output = [];
+
+          numbers.split("").map((number) => {
+            if (parseInt(number) === 0) {
+              let num = parseInt(number);
+              output.push(num);
+            } else if (parseInt(number) < 4) {
+              let num = parseInt(number);
+              output.push(num + 6);
+            } else if (parseInt(number) > 6) {
+              let num = parseInt(number);
+              output.push(num - 6);
+            } else {
+              let num = parseInt(number);
+              output.push(num);
+            }
+          });
+
+          return output.join("").toString();
+        }
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

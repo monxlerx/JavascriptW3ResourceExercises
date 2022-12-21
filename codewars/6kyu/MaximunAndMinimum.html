@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script>
+      /*
+        Write two functions max and min which returns the maximum and minimum value of the argument passed into them respectively.
+        */
+
+      console.log(max(1, 2, [89, 789, [45644, 48844848]]));
+      console.log(min([], [-4]));
+
+      function max() {
+        const arr = [...arguments].toString().split(",").map(Number);
+        const nan = arr.some((el) => Number.isNaN(el));
+        if (!nan) {
+          arr.sort((a, b) => b - a);
+          return arr[0];
+        }
+        return NaN;
+      }
+
+      function min() {
+        const arr = [...arguments].toString().split(",").map(Number);
+        const nan = arr.some((el) => Number.isNaN(el));
+        if (!nan) {
+          arr.sort((a, b) => a - b);
+          return arr[0];
+        }
+        return NaN;
+      }
+      
+    </script>
+  </head>
+  <body></body>
+</html>

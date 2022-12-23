@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        Everybody knows a little german, right? But remembering the correct articles is a tough job. Write yourself a little helper, that returns the noun with the matching article:
+
+        eqach noun containing less than 2 vowels has the article "das"
+        each noun containing 2/3 vowels has the article "die"
+        each noun containing more than 3 vowels has the article "der"
+        Caution: Vowels are "a,e,i,o,u". Umlaute (ä ö ü) are also being counted!
+
+        (This Kata is a joke, there is no such grammar rule!)                                           
+        */
+       console.log(derDieDas("Ofenkartoffeiiil"));
+
+        function derDieDas(wort){
+            if (wort.length === 0) return `das `;
+
+            let lowerCaseArr = wort.toLowerCase().split('');
+            let vowelCounter = 0;
+            lowerCaseArr.map((char) => {
+                if (/[aeiouäöü]/.test(char)) {
+                    vowelCounter++;
+                }
+            }) ;
+
+            return (vowelCounter < 2) ? `das ${wort}` : (vowelCounter === 2 || vowelCounter === 3) ? `die ${wort}` : `der ${wort}`;
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        There is an array with some numbers. All numbers are equal except for one. Try to find it!
+
+        findUniq([ 1, 1, 1, 2, 1, 1 ]) === 2
+        findUniq([ 0, 0, 0.55, 0, 0 ]) === 0.55
+        It’s guaranteed that array contains at least 3 numbers.
+
+        The tests contain some very huge arrays, so think about performance.
+        */
+
+        console.log(findUniq([1, 1, 1, 2, 1, 1]));
+
+        function findUniq(arr) {
+            let initialDigitsArr = new Map();
+            let repetitiveDigit = 0;
+            let comparator = 0;           
+            
+            arr.map((digit, index) => {
+                if (index <= 2) {
+                    if (initialDigitsArr.has(digit)) {
+                        let counter = initialDigitsArr.get(digit);
+                        initialDigitsArr.set(digit, counter + 1);
+                    } else {
+                        initialDigitsArr.set(digit, 1);
+                    }
+                }
+            })
+
+            initialDigitsArr.forEach((key, value) => {
+                if (key >= comparator) {
+                    comparator = key;
+                    repetitiveDigit = value;
+                }
+            })
+
+            let result = new Set(arr);
+            result.delete(repetitiveDigit);
+            let [first] = result;
+
+            return first;
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
